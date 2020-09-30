@@ -6,10 +6,6 @@ This project is use for place the order with restricted country.
 composer install
 php artisan key:generate
 ```
-## Run the Project
-```bash
-php artisan serve
-```
 
 ## Run migration and seeder
 ```bash
@@ -17,6 +13,10 @@ php artisan migrate
 php artisan db:seed 
 or
 php artisan migrate --seed
+```
+## Run the Project
+```bash
+php artisan serve
 ```
 
 ## Run Unit Test cases
