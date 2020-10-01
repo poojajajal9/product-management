@@ -95,4 +95,19 @@ class ProductTest extends TestCase
         $this->assertEquals($data['picture'], $product->picture);
         $this->assertEquals($data['is_active'], $product->is_active);
     }
+
+    /** @test */
+    public function user_can_place_a_order()
+    {
+        $response = $this->post('order', [
+            'unit_number' => $this->faker->randomDigit,
+            'buzzer_number' => $this->faker->randomDigit,
+            'address' => $this->faker->address,
+            'city' => $this->faker->city,
+            'state' => $this->faker->state,
+            'zip_code' => $this->faker->postcode,
+            'country' => $this->faker->country,
+        ]);
+        $response->assertRedirect('/');
+    }
 }
